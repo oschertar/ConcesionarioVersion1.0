@@ -6,13 +6,15 @@ import concesionarioCoches.Modelo;
 
 /**
  * Queremos modelar un concesionario de coches en Java. Nos limitaremos a las
- * siguientes opciones: Añadir un coche (se pedirá matricula, color y modelo),
- * Eliminar un coche (por matrícula), mostrar un coche (por matrícula), mostrar
+ * siguientes opciones: AÃ±adir un coche (se pedirÃ¡ matricula, color y modelo),
+ * Eliminar un coche (por matrÃ­cula), mostrar un coche (por matrÃ­cula), mostrar
  * coches (todo el concesionario)
  * 
  * @author Javier Benitez del Pozo
  * 
  */
+ 
+ //Probando Git
 public class TestConcesionario{
 	static Menu menu = new Menu("Concesionario de coches", new String[] {
 			"Alta Coche", "Baja Coche", "Mostrar Coche",
@@ -27,7 +29,7 @@ public class TestConcesionario{
 	public static void main(String[] args) {
 		do {
 			switch (menu.gestionar()) {
-			case 1:// "Añadir Coche
+			case 1:// "AÃ±adir Coche
 				annadirCoche();
 				break;
 			case 2:// Eliminar Coche
@@ -40,7 +42,7 @@ public class TestConcesionario{
 				System.out.println(concesionario);
 				break;
 			case 5:// Contar coches
-				System.out.println("Número de coches en el concesionario: "
+				System.out.println("NÃºmero de coches en el concesionario: "
 						+ concesionario.size());
 				break;
 			case 6:// Mostrar coches de un color
@@ -56,7 +58,7 @@ public class TestConcesionario{
 
 	private static void getCoche() {
 		Coche coche = concesionario.get(Teclado
-				.leerCadena("Introduce la matrícula"));
+				.leerCadena("Introduce la matrÃ­cula"));
 		if (coche == null)
 			System.out.println("No existe el coche en el concesionario.");
 		else
@@ -65,18 +67,18 @@ public class TestConcesionario{
 
 	private static void eliminarCoche() {
 		if (concesionario
-				.eliminar(Teclado.leerCadena("Introduce la matrícula")))
+				.eliminar(Teclado.leerCadena("Introduce la matrÃ­cula")))
 			System.out.println("Coche eliminado");
 		else
 			System.out.println("No se ha podido eliminar");
 	}
 
 	private static void annadirCoche() {
-		if (concesionario.annadir(Teclado.leerCadena("Introduce la matrícula"),
+		if (concesionario.annadir(Teclado.leerCadena("Introduce la matrÃ­cula"),
 				pedirColor(), pedirModelo()))
-			System.out.println("Coche añadido con éxito");
+			System.out.println("Coche aÃ±adido con Ã©xito");
 		else
-			System.out.println("No se ha podido añadir");
+			System.out.println("No se ha podido aÃ±adir");
 	}
 
 	private static Modelo pedirModelo() {
